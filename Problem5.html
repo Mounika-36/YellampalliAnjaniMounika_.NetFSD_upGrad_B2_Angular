@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Course Enrollment Form</title>
+</head>
+<body>
+
+<header>
+    <h1>Online Learning Platform</h1>
+    <p>Course Enrollment Form</p>
+</header>
+
+<main>
+    <section>
+        <form autocomplete="off">
+            <p>
+                <label for="course">Choose Course:</label><br>
+                <input list="courseList" id="course" name="course" required>
+                <datalist id="courseList">
+                    <option value="HTML">
+                    <option value="CSS">
+                    <option value="JavaScript">
+                    <option value="Python">
+                    <option value="Java">
+                </datalist>
+            </p>
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age" min="18" max="60" required>
+            </p>
+            <p>
+                <label for="skill">Skill Level:</label><br>
+                <input type="range" id="skill" name="skill" min="0" max="100">
+            </p>
+            <p>
+                <label>Current Skill Status:</label><br>
+                <meter min="0" max="100" value="40">Beginner</meter>
+            </p>
+            <p>
+                <label for="progress">Enrollment Completion:</label><br>
+                <progress id="enrollment completion" value="60" max="100"></progress>
+            </p>
+            <p>
+                <input type="submit" value="Enroll Now">
+            </p>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Online Learning Platform</p>
+</footer>
+
+</body>
+</html>
