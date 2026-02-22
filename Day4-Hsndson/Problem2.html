@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grade Evaluator</title>
+
+<style>
+  body{
+    text-align:center;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Welcome to Student Grade Evaluator</h1>
+
+<input type="number" id="marks" placeholder="Enter student marks">
+<br><br>
+
+<button onclick="
+let student_marks = Number(document.getElementById('marks').value);
+
+if(student_marks >= 75){
+  console.log('Grade A');
+}
+else if(student_marks >= 60){
+  console.log('Grade B');
+}
+else if(student_marks >= 40){
+  console.log('Grade C');
+}
+else{
+  console.log('Fail');
+}
+">
+Show Grade
+</button>
+
+</body>
+</html>

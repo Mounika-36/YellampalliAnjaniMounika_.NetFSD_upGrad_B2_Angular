@@ -1,0 +1,41 @@
+/* Element selector */
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #FFF4EA;
+}
+
+/* Class selector */
+.features {
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+
+.features h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.feature-list {
+    list-style-type: none;
+    
+}
+
+/* Feature items */
+.feature-list li {
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px;
+    margin: 12px 0;
+    border: 2px solid #E491C9;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.feature-list li:hover {
+    background-color: #C0B87A;
+    color: #1ac1d7;
+    transform: scale(1.1);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Signal Simulator</title>
+</head>
+<body>
+
+<h2>Traffic Signal Simulator</h2>
+
+<input type="text" id="signalInput" placeholder="Enter signal color">
+<br><br>
+
+<button onclick="checkSignal()">Show Instruction</button>
+
+<script>
+  function checkSignal() {
+
+    let signal = document.getElementById("signalInput").value.toLowerCase();
+
+    switch (signal) {
+
+      case "red":
+        console.log("Stop");
+        break;
+
+      case "yellow":
+        console.log("Get Ready");
+        break;
+
+      case "green":
+        console.log("Go");
+        break;
+
+      default:
+        console.log("Invalid Input");
+    }
+  }
+</script>
+
+</body>
+</html>
+
+
+
