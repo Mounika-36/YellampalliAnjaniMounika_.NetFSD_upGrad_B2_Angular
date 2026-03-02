@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile Manager</title>
+
+    <style>
+        .card {
+            width: 250px;
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Profile</h2>
+
+    <div id="profile" class="card"></div>
+
+    <br>
+
+    <input type="number" id="marksInput" placeholder="Enter new marks">
+    <button id="updateBtn">Update Marks</button>
+
+    <script>
+        var student = {
+            name: "Anjalni Mounika",
+            rollNo: 101,
+            marks: 85
+        };
+        function updateStudentProfile(studentObj) {
+
+            var data =
+                "<h3>" + studentObj.name + "</h3>" +
+                "<p>Roll No: " + studentObj.rollNo + "</p>" +
+                "<p>Marks: " + studentObj.marks + "</p>";
+
+            document.getElementById("profile").innerHTML = data;
+        }
+        function updateMarks(newMarks) {
+            student.marks = newMarks;   
+            updateStudentProfile(student); 
+        }
+        document.getElementById("updateBtn").addEventListener("click", function () {
+
+            var newMarksValue = document.getElementById("marksInput").value;
+
+            updateMarks(newMarksValue);
+        });
+        updateStudentProfile(student);
+
+    </script>
+
+</body>
+</html>
