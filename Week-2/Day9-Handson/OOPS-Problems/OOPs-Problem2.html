@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <h2>Vehicle Managemnet System</h2>
+    <button onclick="runSystem()">Show Details</button>
+    <pre id="output"></pre>
+    <script>
+        class Vehicle{
+            brand="";
+            speed="";
+            constructor (brand, speed)
+            {
+                this.brand=brand;
+                this.speed=speed;
+            }
+            displayInfo(){
+                return  `Brand : ${this.brand}, Speed : ${this.speed}km/h`;
+
+            }
+        }
+        class Car extends Vehicle{
+            // fueltype="";
+            constructor(brand,speed,fueltype){
+                super(brand,speed);
+                this.fueltype=fueltype;
+            }
+            showCarDetails(){
+                return `${this.displayInfo()} , Fuel Type : ${this.fueltype}`;
+            }
+                       
+            }
+            function runSystem(){
+                let car1= new Car("Toyota",180,"Petrol");
+                let result="";
+                result+=car1.displayInfo() +"\n";
+                result+=car1.showCarDetails();
+                document.getElementById("output").textContent=result;
+
+            }
+        
+
+    </script>
+    
+</body>
+</html>

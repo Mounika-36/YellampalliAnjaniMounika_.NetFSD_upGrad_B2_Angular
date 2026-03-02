@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Class</title>
+</head>
+<body>
+
+<h2>Object Oriented Programming</h2>
+<hr>
+
+<input type="button" onclick="fn_button1Click()" value="Get Data" />
+
+<pre id="output"></pre>
+
+<script>
+class Student {
+
+    name = "";
+    rollNumber = 0;
+    marks = 0;
+
+    constructor(name = "", rollNumber = 0, marks = 0) 
+    {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    getGrade() 
+    {
+        if (this.marks >= 90) return "A";
+        else if (this.marks >= 75) return "B";
+        else if (this.marks >= 50) return "C";
+        else return "Fail";
+    }
+
+    getDetails()
+    {
+        return `Student Details
+    Name       : ${this.name}
+    RollNumber : ${this.rollNumber}
+    Marks      : ${this.marks}
+    Grade      : ${this.getGrade()}
+-----------------------------`;
+    }
+}
+
+function fn_button1Click() {
+
+    let s1 = new Student("Mounika", 121, 90);
+    let s2 = new Student("Kavya", 122, 79);
+
+    let result = "";
+
+    result += s1.getDetails() + "\n";
+    result += s2.getDetails();
+
+    document.getElementById("output").textContent = result;
+}
+</script>
+
+</body>
+</html>

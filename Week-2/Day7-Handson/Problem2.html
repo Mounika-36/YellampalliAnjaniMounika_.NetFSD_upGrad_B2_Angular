@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Cart Summary</title>
+</head>
+<body>
+<h1>Product Cart Summary</h1>
+<script>
+  let cart = [
+    { name: "Laptop", price: 50000, quantity: 1 },
+    { name: "Mouse", price: 500, quantity: 2 },
+    { name: "Keyboard", price: 1500, quantity: 1 }
+  ];
+
+  let calculateTotal = (items) => {
+    return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  let generateInvoice = (items) => {
+
+    let productLines = items.map(item => `
+Product : ${item.name}
+Price   : ₹${item.price}
+Qty     : ${item.quantity}
+Amount  : ₹${item.price * item.quantity}
+`).join("");
+
+    let totalValue = calculateTotal(items);
+
+    let invoice = `
+========INVOICE ========
+${productLines}
+Total Cart Value : ₹${totalValue}
+=====================
+`;
+
+    console.log(invoice);
+  };
+  generateInvoice(cart);
+</script>
+
+</body>
+</html>

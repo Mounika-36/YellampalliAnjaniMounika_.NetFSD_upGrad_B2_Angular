@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Marks Analyzer</title>
+</head>
+
+<body>
+
+<h1>Student Marks Analyzer</h1>
+<br>
+<button onclick="marksanalyzer()">Marks Analyzer</button>
+
+<pre id="result"></pre>
+
+<script>
+let StudentMarks = [75,80,65,90,94];
+
+
+let totalmarks = (arr) => arr.reduce((sum, value) => sum + value, 0);
+
+
+let average = (marks) => totalmarks(marks) / marks.length;
+
+let getResult = (avg) => (avg >= 40 ? "PASS" : "FAIL");
+
+
+let marksanalyzer = () => {
+    let total = totalmarks(StudentMarks);
+    let avg = average(StudentMarks);
+    let result = getResult(avg);
+
+    document.getElementById("result").innerText = `
+Student Marks: ${StudentMarks.join(", ")}
+Total Marks: ${total}
+Average: ${avg.toFixed(2)}
+Result: ${result}`;
+};
+</script>
+
+</body>
+</html>
