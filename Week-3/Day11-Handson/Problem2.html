@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ Toggle</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+    }
+
+    #faqContainer {
+      width: 600px;
+      margin: 40px auto;
+    }
+
+    .faq-item {
+      background: #fff;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      padding: 15px;
+    }
+
+    .question {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* Highlight class */
+    .highlight {
+      background-color: #e7f3ff;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="faqContainer">
+
+  <div class="faq-item">
+    <div class="question">What is jQuery?</div>
+    <div class="answer">jQuery is a JavaScript library for DOM manipulation.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Why is jQuery used?</div>
+    <div class="answer">It simplifies JavaScript coding and event handling.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What is slideToggle()?</div>
+    <div class="answer">It toggles visibility with a sliding animation.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What is a CDN?</div>
+    <div class="answer">It is a hosted library used without downloading.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Is jQuery easy to learn?</div>
+    <div class="answer">Yes, it has simple syntax and powerful features.</div>
+  </div>
+
+</div>
+
+<script>
+$(document).ready(function () {
+
+  $(".question").click(function () {
+
+    // Toggle only the clicked answer
+    $(this).next(".answer").slideToggle();
+
+    // Highlight the selected question
+    $(this).parent().toggleClass("highlight");
+
+  });
+
+});
+</script>
+
+</body>
+</html>
