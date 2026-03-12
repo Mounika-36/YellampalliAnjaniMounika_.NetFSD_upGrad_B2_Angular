@@ -1,19 +1,40 @@
-﻿namespace ConsoleApp4
+﻿using System;
+
+namespace ConsoleAppBonus
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             string empName;
-            int experience;
             double salary;
-            Console.WriteLine("Enter user name : ");
+            int experience;
+
+            Console.Write("Enter Name: ");
             empName = Console.ReadLine();
-            Console.WriteLine("Enter user Experience : ");
-            experience = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter user Salary : ");
+
+            Console.Write("Enter Salary: ");
             salary = double.Parse(Console.ReadLine());
+
+            // Check salary
+            if (salary < 0)
+            {
+                Console.WriteLine("Invalid Salary! Salary cannot be negative.");
+                return;
+            }
+
+            Console.Write("Enter Experience: ");
+            experience = int.Parse(Console.ReadLine());
+
+            // Check experience
+            if (experience < 0)
+            {
+                Console.WriteLine("Invalid Experience! Experience cannot be negative.");
+                return;
+            }
+
             double bonusPercent;
+
             if (experience < 2)
             {
                 bonusPercent = 0.05;
@@ -26,10 +47,10 @@
             {
                 bonusPercent = 0.15;
             }
-            double bonus = salary * bonusPercent;
-            double finalSalary = bonus > 0 ? salary + bonus : salary;
 
-            // Display result
+            double bonus = salary * bonusPercent;
+            double finalSalary = salary + bonus;
+
             Console.WriteLine("Employee: " + empName);
             Console.WriteLine("Bonus: " + bonus);
             Console.WriteLine("Final Salary: " + finalSalary);
